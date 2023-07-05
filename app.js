@@ -6,9 +6,9 @@ var bodyParser  = require('body-parser');
 var errorhandler = require('errorhandler');
 var http        = require('http');
 var path        = require('path');
-var request     = require('request');
-var routes      = require('./routes');
-var activity    = require('./routes/activity');
+// var request     = require('request');
+// var routes      = require('./routes');
+// var activity    = require('./routes/activity');
 
 var app = express();
 
@@ -28,15 +28,18 @@ if ('development' == app.get('env')) {
 }
 
 // HubExchange Routes
-app.get('/', routes.index );
-app.post('/login', routes.login );
-app.post('/logout', routes.logout );
+// app.get('/', routes.index );
+app.get('/',(req,res)=>{
+  res.end("hello")
+})
+// app.post('/login', routes.login );
+// app.post('/logout', routes.logout );
 
-// Custom Hello World Activity Routes
-app.post('/journeybuilder/save/', activity.save );
-app.post('/journeybuilder/validate/', activity.validate );
-app.post('/journeybuilder/publish/', activity.publish );
-app.post('/journeybuilder/execute/', activity.execute );
+// // Custom Hello World Activity Routes
+// app.post('/journeybuilder/save/', activity.save );
+// app.post('/journeybuilder/validate/', activity.validate );
+// app.post('/journeybuilder/publish/', activity.publish );
+// app.post('/journeybuilder/execute/', activity.execute );
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -1,7 +1,7 @@
 {
     "name": "customjbactivity",
-    "description": "Simple Custom Journey Builder Activity",
-    "repository": "https://github.com/jeremywrags/customjbactivity",
+    "description": "node.js app acta as bridge between saleforce market cloud App and SMS magic App",
+    "repository": "https://github.com/lakhanmeghani/customjbactivity.git",
     "keywords": [
         "journey",
         "builder",
